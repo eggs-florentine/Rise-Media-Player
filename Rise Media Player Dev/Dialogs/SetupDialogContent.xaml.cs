@@ -2,6 +2,7 @@
 using Rise.App.ViewModels;
 using Rise.App.Views;
 using Rise.Common.Extensions.Markup;
+using Rise.Common.Behaviours;
 using System;
 using System.Threading.Tasks;
 using Windows.UI.ViewManagement;
