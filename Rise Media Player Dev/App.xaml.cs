@@ -8,6 +8,7 @@ using Rise.Common.Enums;
 using Rise.Common.Extensions;
 using Rise.Common.Extensions.Markup;
 using Rise.Common.Helpers;
+using Rise.Common.Behaviours;
 using Rise.Data.Messages;
 using Rise.Data.Navigation;
 using Rise.Data.ViewModels;
