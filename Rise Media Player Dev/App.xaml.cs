@@ -76,6 +76,10 @@ namespace Rise.App
             if (SViewModel.SelectedGlaze == GlazeTypes.MediaThumbnail)
                 SViewModel.GlazeColors = Colors.Transparent;
 
+            // Initialise the Discord RPC and invoke behaviour as idle
+            DiscordRPCBehaviour.initialise();
+            DiscordRPCBehaviour.invoke(DiscordRPCState.IDLE, "", "ENTER CLIENT ID");
+
             InitializeComponent();
 
             Suspending += OnSuspending;
