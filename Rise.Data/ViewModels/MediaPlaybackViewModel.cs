@@ -2,6 +2,7 @@ using Rise.Common.Constants;
 using Rise.Common.Extensions;
 using Rise.Common.Helpers;
 using Rise.Common.Interfaces;
+using Rise.Common.Behaviours;
 using Rise.Models;
 using System;
 using System.Collections.Generic;
