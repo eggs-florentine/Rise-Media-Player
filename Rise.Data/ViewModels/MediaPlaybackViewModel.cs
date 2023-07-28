@@ -280,8 +280,10 @@ namespace Rise.Data.ViewModels
 
                 MediaPlaybackItem itm = null;
                 if (SupportedFileTypes.MusicFiles.Contains(extension))
+                    DiscordRPCBehaviour.invoke(DiscordRPCState.LISTENING, file.DisplayName, "INSERT_CLIENT_ID");
                     itm = await file.GetSongAsync();
                 else if (SupportedFileTypes.VideoFiles.Contains(extension))
+                    DiscordRPCBehaviour.invoke(DiscordRPCState.WATCHING, file.DisplayName, "INSERT_CLIENT_ID");
                     itm = await file.GetVideoAsync();
 
                 token.ThrowIfCancellationRequested();
