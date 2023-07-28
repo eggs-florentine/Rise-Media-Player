@@ -22,12 +22,38 @@ class DiscordRPCBehaviour {
     }
   }
 
-  public void invoke(DiscordRPCState d, string s) {
+  public void invoke(DiscordRPCState d, string s, string clientId) {
     // interpret state and then set action
+    client = new DiscordRpcClient(clientId);
+
+    client.Initialize();
+    
+    client.SetPresence(new RichPresence()
+    { 
+      Details = interpretState(d, s),
+      State = "",
+    }
   }
 
   public void initialise(string clientId) {
     // initialise client and invoke as idle, check initialisation
+    client = new DiscordRpcClient(clientId);          
+
+    // subscribe to events
+    client.OnReady += (sender, e) =>
+    {
+        Console.WriteLine("Received ready from user {0}", e.User.Username);
+    };
+
+    // connect to the RPC
+    client.Initialize();
+
+    // set the rich presence
+    client.SetPresence(new RichPresence()
+    {
+        Details = "Idle",
+        State = ""
+    }); 
   } 
 }
 
