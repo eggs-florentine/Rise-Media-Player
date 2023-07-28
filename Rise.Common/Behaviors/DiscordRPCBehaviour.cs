@@ -32,7 +32,7 @@ class DiscordRPCBehaviour {
     { 
       Details = interpretState(d, s),
       State = "",
-    }
+    });
   }
 
   public void initialise(string clientId) {
