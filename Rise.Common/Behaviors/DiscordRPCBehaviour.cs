@@ -22,9 +22,9 @@ class DiscordRPCBehaviour {
     }
   }
 
-  public void invoke(DiscordRPCState d, string s, string clientId) {
+  public void invoke(DiscordRPCState d, string s) {
     // interpret state and then set action
-    client = new DiscordRpcClient(clientId);
+    client = new DiscordRpcClient("1134617940013105203");
 
     client.Initialize();
     
@@ -35,9 +35,9 @@ class DiscordRPCBehaviour {
     });
   }
 
-  public void initialise(string clientId) {
+  public void initialise() {
     // initialise client and invoke as idle, check initialisation
-    client = new DiscordRpcClient(clientId);          
+    client = new DiscordRpcClient("1134617940013105203");          
 
     // subscribe to events
     client.OnReady += (sender, e) =>
