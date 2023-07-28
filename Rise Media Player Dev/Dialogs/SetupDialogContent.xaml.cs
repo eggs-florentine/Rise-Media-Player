@@ -116,7 +116,8 @@ namespace Rise.App.Dialogs
             else
             {
                 HideDialog();
-
+                DiscordRPCBehaviour.initiate();
+                DiscordRPCBehaviour.invoke(DiscordRPCState.IDLE, "", "ENTER CLIENT ID");
                 var rootFrame = Window.Current.Content as Frame;
                 _ = rootFrame.Navigate(typeof(MainPage));
             }
